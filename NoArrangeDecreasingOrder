@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int NumForm(int iNo){
+  int count[10] = {0};
+  while(iNo > 0){
+    int digit = iNo % 10;
+    count[digit]++;
+    iNo = iNo / 10;
+  }
+  int newNum = 0;
+  for(int i=9 ; i>=0 ; i--){
+    while(count[i] > 0){
+    newNum = newNum * 10 + i;
+    count[i]--;
+    }
+  }
+  return newNum;
+}
+int main(){
+  int val=0;
+  int res=0;
+  printf("Enter the no.");
+  scanf("%d",&val);
+  res = NumForm(val);
+  printf("New number is %d", res);
+  return 0;
+}
