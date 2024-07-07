@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<limits.h>
+
+int DiffDigit(int No){
+  int minDigit = INT_MAX;
+  int maxDigit = INT_MIN;
+  while(No > 0){
+    int digit = No % 10;
+
+    if(digit < minDigit){
+      minDigit = digit;
+    }
+
+    if(digit > maxDigit){
+      maxDigit = digit;
+    }
+    No /= 10;
+  }
+  return maxDigit - minDigit;
+}
+
+int main(){
+  int val=0;
+  int res=0;
+  printf("Enter the no.");
+  scanf("%d",&val);
+  res = DiffDigit(val);
+  printf("Difference is %d", res);
+  return 0;
+}
