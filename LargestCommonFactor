@@ -1,0 +1,20 @@
+#include <stdio.h>
+int LargestCommon(int iNo1, int iNo2){
+    while (iNo1 != iNo2) {
+        if (iNo1 > iNo2)
+            iNo1 = iNo1 - iNo2;
+        else
+            iNo2 = iNo2 - iNo1;
+    }
+    return iNo1;
+}
+int main()
+{
+    int iValue1 = 0, iValue2 = 0;
+    int iRet = 0;
+    printf("Enter numbers: ");
+    scanf("%d%d", &iValue1, &iValue2);
+    iRet = LargestCommon(iValue1, iValue2);
+    printf("Largest common factor is %d\n", iRet);
+    return 0;
+}
