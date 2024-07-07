@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int DigitFrequency(int No, int Digit)
+{
+    int count = 0;
+    while (No > 0) {
+        int digit = No % 10;  
+        if (digit == Digit) {
+            count++;  
+        }
+        No /= 10; 
+    }
+    return count;
+}
+
+int main()
+{
+    int Val1 = 0, Val2 = 0;
+    int Ret = 0;
+
+    printf("Enter number and digit to find out its frequency = ");
+    scanf("%d%d", Val1, Val2);
+    iRet = DigitFrequency(Val1, Val2);
+
+    printf("Frequency is %d\n", Ret);
+    return 0;
+}
