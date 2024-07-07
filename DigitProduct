@@ -1,0 +1,20 @@
+#include <stdio.h>
+int DigitProduct(int iNo){
+  int product=1;
+
+  while(iNo > 0){
+    int digit = iNo % 10;
+    product *= digit;
+    iNo /= 10;
+  }
+  return product;
+}
+int main(){
+  int val;
+  int res=0;
+  printf("Enter the no. ");
+  scanf("%d", &val);
+  res = DigitProduct(val);
+  printf("Multiplication of %d", res);
+  return 0;
+}
