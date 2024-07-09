@@ -1,0 +1,24 @@
+#include <stdio.h>
+int EvenMulDigit(int No){
+  int digit;
+  int result=1;
+  int EvenDigit=0;
+
+  while(No != 0){
+    digit = No % 10;
+    if(digit % 2 == 0){
+      result *= digit;
+      EvenDigit = 1;
+    }
+    No /= 10;
+  }
+  return (EvenDigit)? result : 0;
+}
+int main(){
+  int val=0, res=0;
+  printf("Enter the no.");
+  scanf("%d", &val);
+  res = EvenMulDigit(val);
+  printf("Multiplication is %d" , res);
+  return 0;
+}
