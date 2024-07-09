@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define TRUE 1
+#define FALSE 0
+typedef int BOOL;
+BOOL ChkPalindrome(int No){
+  int rev=0, temp=No;
+  while(No != 0){
+    rev = rev * 10 + (No % 10);
+    No = No / 10;
+  }
+  return (temp == rev)? TRUE : FALSE;
+}
+int main(){
+  int val=0;
+  BOOL res = FALSE;
+  printf("Enter the no. ");
+  scanf("%d", &val);
+  res = ChkPalindrome(val);
+  if(res == TRUE){
+    printf("No. is Palidrome");
+  }
+  else{
+    printf("No. is not Palindrome");
+  }
+  return 0;
+}
