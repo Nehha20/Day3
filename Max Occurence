@@ -1,0 +1,25 @@
+#include <stdio.h>
+int DigitMax(int No){
+  int count[10] = {0};
+  int maxDigit=0, maxCount=0;
+  while(No != 0){
+    int digit = No % 10;
+    count[digit]++;
+    No /= 10;
+  }
+  for(int i=0 ; i<10 ; i++){
+    if(count[i] > maxCount){
+      maxCount = count[i];
+      maxDigit = i;
+    }
+  }
+  return maxDigit;
+}
+int main(){
+  int val=0, res=0;
+  printf("Ener the number ");
+  scanf("%d", &val);
+  res = DigitMax(val);
+  printf("Maximum occuring digit is %d", res);
+  return 0;
+}
